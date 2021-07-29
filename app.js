@@ -15,8 +15,12 @@ router.get('/',(req,res) =>{
     res.sendFile(path.join(__dirname + '/public/views/home.html'))
 })
 
-router.get('/aboutus',(req,res) =>{
-    res.sendFile(path.join(__dirname + '/public/views/aboutus.html'))
+router.get('/about',(req,res) =>{
+    res.sendFile(path.join(__dirname + '/public/views/about.html'))
+})
+
+router.get('/contact',(req,res) =>{
+    res.sendFile(path.join(__dirname + '/public/views/contact.html'))
 })
 
 // add router
