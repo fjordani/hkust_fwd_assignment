@@ -15,6 +15,32 @@ body{
     background-color: #512DA8;
 }
 
+.navbar{
+    font-size: 1.6em;
+}
+
+header h1{
+    font-size: 3em;
+}
+header p{
+    font-size: 1.2em;
+}
+
+
+#tooltipReservetb{
+    background: #333;
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    font-size: 13px;
+    border-radius: 4px;
+    display: none;
+}
+
+#tooltipReservetb[data-show]{
+    display: block;
+}
+
 address{
     font-size:80%;
     margin:0px;
