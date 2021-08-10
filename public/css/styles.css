@@ -1,77 +1,119 @@
-body{
-    padding:50px 0px 0px 0px;
-    z-index: 0;
+body {
+  padding: 50px 0px 0px 0px;
+  z-index: 0;
 }
 
-.jumbotron {
-    border-radius: .3rem;
-    padding:70px 30px 70px 30px;
-    margin:0px auto;
-    background: #9575CD ;
-    color:floralwhite;
-}
-
-.navbar-dark{
-    background-color: #512DA8;
-}
-
-.navbar{
-    font-size: 1.6em;
-}
-
-header h1{
-    font-size: 3em;
-}
-header p{
-    font-size: 1.2em;
-}
-
-
-#tooltipReservetb{
-    background: #333;
-    color: white;
-    font-weight: bold;
-    padding: 4px 8px;
-    font-size: 13px;
-    border-radius: 4px;
-    display: none;
-}
-
-#tooltipReservetb[data-show]{
-    display: block;
-}
-
-address{
-    font-size:80%;
-    margin:0px;
-    color:#0f0f0f;
-}
-
-.tab-content{
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    border-bottom:  1px solid #ddd;
-    padding: 10px;
-}
-
-.row-header{
-    margin:0px auto;
-    padding:0px;
+.row-header {
+  margin: 0px auto;
+  padding: 0px 0px;
 }
 
 .row-content {
-    margin:0px auto;
-    padding: 50px 0px 50px 0px;
-    border-bottom: 1px ridge;
-    min-height:400px;
+  margin: 0px auto;
+  padding: 50px 50px;
+  border-bottom: 1px ridge;
+  min-height: 400px;
 }
 
-.footer{
-    background-color: #D1C4E9;
-    margin:0px auto;
-    padding: 20px 0px 20px 0px;
+.jumbotron {
+  margin: 0px auto;
+  padding: 70px 30px;
+  background-color: #9575CD;
+  color: #FFFAF0;
 }
 
-a{
-    text-decoration-line: none;
+.address {
+  font-size: 80%;
+  margin: 0px;
+  color: #0f0f0f;
 }
+
+body {
+  padding: 50px 0px 0px 0px;
+  z-index: 0;
+}
+
+.navbar-dark {
+  background-color: #512DA8;
+}
+
+.navbar {
+  font-size: 1.6em;
+}
+
+#loginModalIcon {
+  color: #FFFAF0;
+  cursor: pointer;
+}
+
+header h1 {
+  font-size: 3em;
+}
+header header p {
+  font-size: 1.2em;
+}
+
+.tab-content {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+#reserveTbBtn {
+  color: #FFFAF0;
+}
+
+.modal-header {
+  background-color: #512DA8;
+  color: #FFFAF0;
+}
+
+.modal-body {
+  background-color: #D1C4E9;
+}
+
+.closeModal {
+  color: #FFFAF0;
+}
+
+.carousel-item .carousel-caption p {
+  text-align: left;
+}
+
+.carousel {
+  background-color: #512DA8;
+}
+.carousel .carousel-item {
+  height: 300px;
+}
+.carousel .carousel-item .carousel-caption {
+  margin-left: 12em;
+  margin-top: auto;
+  margin-bottom: 2em;
+  font-size: 1.2em;
+}
+.carousel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 300px;
+}
+
+#carouselButton {
+  right: 0px;
+  bottom: 0px;
+  position: absolute;
+}
+
+a {
+  text-decoration-line: none;
+}
+
+.footer {
+  background-color: #D1C4E9;
+  margin: 0px auto;
+  padding: 20px 0px;
+}
+
+/*# sourceMappingURL=styles.css.map */

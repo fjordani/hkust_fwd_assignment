@@ -35,6 +35,10 @@ router.get('/contact',(req,res) =>{
     res.sendFile(path.join(__dirname + '/public/views/contact.html'))
 })
 
+router.get('/menu',(req,res) =>{
+    res.sendFile(path.join(__dirname + '/public/views/home.html'))
+})
+
 // add router
 app.use('/',router);
 

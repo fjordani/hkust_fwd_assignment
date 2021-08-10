@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "sass ./public/css/styles.scss ./public/css/styles.css"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/fjordani/hkust_fwd_assignment#readme",
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "sass": "^1.37.5"
   },
   "dependencies": {
     "@popperjs/core": "^2.9.3",

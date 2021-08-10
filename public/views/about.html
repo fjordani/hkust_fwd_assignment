@@ -20,9 +20,9 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand me-auto" href="/"><img src="static/imgs/logo.png" height="30" height="41"></a>
+      <a class="navbar-brand" href="/"><img src="static/imgs/logo.png" height="30" height="41"></a>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto">
+        <ul class="navbar-nav me-auto mb-2">
           <li class="nav-item">
             <a class="nav-link" href="/"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Home</a>
           </li>
@@ -36,9 +36,51 @@
             <a class="nav-link" href="/contact"><i class="fa fa-id-card-o" aria-hidden="true"></i>&nbsp;Contact</a>
           </li>
         </ul>
+        <span class="navbar-text" id="loginModalIcon">          
+          <span class="fa fa-sign-in"></span>
+          Login          
+      </span>
       </div>
     </div>
   </nav>
+
+  <div id="loginModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" role="content">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Login</h4>        
+            <span class="fa fa-times-circle fa-lg" id="closeModalLogin"></span>          
+        </div>
+        <div class="modal-body">
+          <form class="row gx-2 gy-2 align-self-center">
+            <div class="col-12 col-sm-6">
+              <label for="inputEmail" class="visually-hidden">Email</label>
+              <input type="email" class="form-control" id="inputEmail" value="email@example.com">
+            </div>
+            <div class="col-12 col-sm-6">
+              <label for="inputPassword" class="visually-hidden">Password</label>
+              <input type="password" class="form-control" id="inputPassword" placeholder="********">
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="rememberMe">
+                <label class="form-check-label" for="rememberMe">
+                  Remember me
+                </label>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="float-sm-end">
+                <button type="button" class="btn btn-secondary" id="cancelLoginModal">Cancel</button>
+                <button type="submit" class="btn btn-primary">Login</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <header class="jumbotron">
     <div class="container">
       <div class="row row-header">
@@ -50,12 +92,96 @@
             your culinary senses!
           </p>
         </div>
-        <div class="col-6 col-sm align-self-center">
+        <div class="col-6 col-sm-3 align-self-center">
           <img src="static/imgs/logo.png" class="img-fluid">
+        </div>
+        <div class="col-6 col-sm-3 align-self-center">
+          <button type="button" id="reserveTbBtn" class="btn btn-warning btn-lg">
+            Reserve Table
+        </div>
+        </button>
+      </div>
+    </div>
+    </div>
+  </header>
+
+  <div id="reserveTableModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" role="content">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Reserve a Table</h4>          
+            <span class="fa fa-times-circle fa-lg closeModalReserveTb" id="closeModalReserveTb"></span>          
+        </div>
+        <div class="modal-body">
+          <form id="reservationDate">
+            <div class="row py-2">
+              <div class="col-12 col-sm-3">
+                Number of Guests
+              </div>
+              <div class="col-12 col-sm-8">
+                <div class="form-check form-check-inline me-1">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
+                  <label class="form-check-label" for="inlineRadio1">1</label>
+                </div>
+                <div class="form-check form-check-inline me-1">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
+                  <label class="form-check-label" for="inlineRadio2">2</label>
+                </div>
+                <div class="form-check form-check-inline me-1">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3">
+                  <label class="form-check-label" for="inlineRadio3">3</label>
+                </div>
+                <div class="form-check form-check-inline me-1">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4">
+                  <label class="form-check-label" for="inlineRadio4">4</label>
+                </div>
+                <div class="form-check form-check-inline me-1">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5">
+                  <label class="form-check-label" for="inlineRadio5">5</label>
+                </div>
+                <div class="form-check form-check-inline me-1">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="6">
+                  <label class="form-check-label" for="inlineRadio6">6</label>
+                </div>
+              </div>
+            </div>
+            <div class="row py-2">
+              <div class="col-12 col-sm-3">
+                Section
+              </div>
+              <div class="col-6 col-sm-5 btn-group" role="group">
+                <input type="radio" class="btn-check" name="section" id="non-smoking" autocomplete="off"
+                  value="non-smoking" checked>
+                <label class="btn btn-outline-success" for="non-smoking">Non-Smoking</label>
+                <input type="radio" class="btn-check" name="section" id="smoking" value="smoking" autocomplete="off">
+                <label class="btn btn-outline-danger" for="smoking">Smoking</label>
+              </div>
+            </div>
+            <div class="row py-2">
+              <div class="col-12 col-sm-3">
+                Reservation Date
+              </div>
+              <div class="col-6 col-sm-5">
+                <input class="form-control" name="date" value="" placeholder="Date" type="text"
+                  onfocus="(this.type='date')" id="date">
+              </div>
+              <div class="col-6 col-sm-3">
+                <input class="form-control" name="time" value="" placeholder="Time" name="date" value="" type="text"
+                  onfocus="(this.type='time')" id="time">
+              </div>
+            </div>
+            <div class="row py-2">
+              <div class="d-none d-sm-block col-sm-3">&nbsp;</div>
+              <div class="col-12 col-sm-8">
+                <button type="button" class="btn btn-secondary" id="cancelModal">Cancel</button>
+                <button class="btn btn-primary" type="submit">Reserve</button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
-  </header>
+  </div>
 
   <div class="container">
     <div class="row row-container align-items-center">
@@ -317,6 +443,7 @@
   </footer>
   <!--  Bootstrap JS-->
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="static/js/customModals.js"></script>
 </body>
 
 </html>
