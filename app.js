@@ -2,18 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const router = express.Router();
-// const { exec } = require('child_process');
-
-// exec('git rev-parse --abbrev-ref HEAD', (err, stdout, stderr) => {
-//     if (err) {
-//         console.log(err);
-//     }
-
-//     if (typeof stdout === 'string' && (stdout.trim() === 'master')) {
-//       console.log(`The branch is master`);
-//       // Call your function here conditionally as per branch
-//     }
-// });
+const { exec } = require("child_process");
 
 // use env vars
 require('dotenv').config();
@@ -42,6 +31,21 @@ router.get('/menu',(req,res) =>{
 // add router
 app.use('/',router);
 
-app.listen(process.env.PORT || 8080, () => {
+// kill any process running on port 8080 before fo app.listen
+if(process.env.PORT == undefined){
+    exec("lsof -n -i:8080 | grep LISTEN | awk '{ print $2 }' | uniq | xargs -r kill -9", (error, stdout, stderr) => {
+        if (error) {
+            console.log(`error: ${error.message}`);
+            return;
+        }
+        if (stderr) {
+            console.log(`stderr: ${stderr}`);
+            return;
+        }
+        console.log(`stdout: ${stdout}`);
+    });
+}
+
+app.listen(process.env.PORT || 8080, () => {   
   console.log(`Example app listening at http://localhost:${process.env.PORT || 8080}`);
 });

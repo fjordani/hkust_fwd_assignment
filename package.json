@@ -4,9 +4,11 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "npm run watch:all",
     "dev": "nodemon app.js",
-    "sass": "sass ./public/css/styles.scss ./public/css/styles.css"
+    "sass": "sass ./public/css/styles.scss ./public/css/styles.css",
+    "watch:sass": "onchange './public/css/*.scss' -- npm run sass",
+    "watch:all": "parallelshell 'npm run watch:sass' 'npm run dev'"
   },
   "repository": {
     "type": "git",
@@ -20,18 +22,23 @@
   "homepage": "https://github.com/fjordani/hkust_fwd_assignment#readme",
   "devDependencies": {
     "nodemon": "^2.0.12",
-    "sass": "^1.37.5"
+    "onchange": "^7.1.0",
+    "parallelshell": "^3.0.1",
+    "sass": "^1.37.5",
+    "watch": "^1.0.2",
+    "child_process": "^1.0.2",
   },
   "dependencies": {
     "@popperjs/core": "^2.9.3",
     "bootstrap": "^5.0.2",
     "bootstrap-social": "^5.1.1",
-    "child_process": "^1.0.2",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "font-awesome": "^4.7.0",
     "fs": "^0.0.1-security",
     "jquery": "^3.6.0",
-    "path": "^0.12.7"
+    "parallel": "^1.2.0",
+    "path": "^0.12.7",
+    "rm": "^0.1.8"
   }
 }
